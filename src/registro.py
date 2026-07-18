@@ -20,3 +20,21 @@ class RegistroPersonas:
             dni: (persona.nombre, persona.apellido, persona.edad)
             for dni, persona in self._personas_por_dni.items()
         }
+    
+    def obtener_persona_mayor(self) -> Persona:
+        if not self._personas_por_dni:
+            raise ValueError("No hay personas registradas.")
+        
+        return max(
+            self._personas_por_dni.values(), 
+            key=lambda persona: persona.edad
+        )
+    
+    def obtener_persona_menor(self) -> Persona:
+        if not self._personas_por_dni:
+            raise ValueError("No hay personas registradas.")
+        
+        return min(
+            self._personas_por_dni.values(), 
+            key=lambda persona: persona.edad
+        )
