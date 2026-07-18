@@ -1,0 +1,22 @@
+from src.models import Persona
+
+class RegistroPersonas:
+    def __init__(self, registros: list[tuple[str, str, str, int]] = None):
+        self._personas_por_dni: dict[str, Persona]={}
+        
+        for dni, nombre, apellido, edad in registros:
+            if dni in self._personas_por_dni:
+                raise ValueError(f"DNI duplicado: {dni}")
+
+            self._personas_por_dni[dni] = Persona(
+                dni=dni,
+                nombre=nombre,
+                apellido=apellido,
+                edad=edad,
+            )
+
+    def obtener_registros_formateados(self) -> dict[str, tuple[str, str, int]]:
+        return {
+            dni: (persona.nombre, persona.apellido, persona.edad)
+            for dni, persona in self._personas_por_dni.items()
+        }
