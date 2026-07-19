@@ -38,3 +38,19 @@ class RegistroPersonas:
             self._personas_por_dni.values(), 
             key=lambda persona: persona.edad
         )
+    
+    def segmentar_por_edad(self, umbral: int = 25) -> tuple[list[Persona], list[Persona]]:
+        if umbral < 0:
+            raise ValueError("El umbral no puede ser negativo.")
+        
+        mayores_a_umbral = []
+        menores_que_umbral = []
+        
+        for persona in self._personas_por_dni.values():
+            if persona.edad >= umbral:
+                mayores_a_umbral.append(persona)
+            else:
+                menores_que_umbral.append(persona)
+        
+        return mayores_a_umbral, menores_que_umbral
+        

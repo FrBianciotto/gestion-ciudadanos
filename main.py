@@ -13,5 +13,10 @@ def main():
     print("Persona mayor:", registro.obtener_persona_mayor())
     print("Persona menor:", registro.obtener_persona_menor())
 
+    mayores, menores = registro.segmentar_por_edad()
+
+    print("Mayores o iguales al umbral:", mayores)
+    print("Menores al umbral:", menores)
+
 if __name__ == "__main__":
     main()
