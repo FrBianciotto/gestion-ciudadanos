@@ -17,7 +17,7 @@ El sistema permite:
 - Consultar la edad de una persona por DNI.
 
 ## Estructura del proyecto
-
+```text
 gestion-ciudadanos/
 ├── src/
 │   ├── __init__.py
