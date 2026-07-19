@@ -20,5 +20,7 @@ def main():
 
     print("Promedio de edad:", registro.calcular_promedio_edad())
 
+    print("Edad de la persona con DNI 87654321:", registro.obtener_edad_por_dni("87654321"))
+
 if __name__ == "__main__":
     main()

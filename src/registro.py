@@ -62,3 +62,9 @@ class RegistroPersonas:
             persona.edad 
             for persona in self._personas_por_dni.values())
         return total_edad / len(self._personas_por_dni)
+    
+    def obtener_edad_por_dni(self, dni: str) -> int:
+        if dni not in self._personas_por_dni:
+            raise ValueError(f"No se encontró persona con DNI: {dni}")
+        
+        return self._personas_por_dni[dni].edad
