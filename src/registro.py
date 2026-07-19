@@ -53,4 +53,12 @@ class RegistroPersonas:
                 menores_que_umbral.append(persona)
         
         return mayores_a_umbral, menores_que_umbral
+    
+    def calcular_promedio_edad(self) -> float:
+        if not self._personas_por_dni:
+            raise ValueError("No hay personas registradas.")
         
+        total_edad = sum(
+            persona.edad 
+            for persona in self._personas_por_dni.values())
+        return total_edad / len(self._personas_por_dni)

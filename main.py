@@ -18,5 +18,7 @@ def main():
     print("Mayores o iguales al umbral:", mayores)
     print("Menores al umbral:", menores)
 
+    print("Promedio de edad:", registro.calcular_promedio_edad())
+
 if __name__ == "__main__":
     main()
