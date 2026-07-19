@@ -1,7 +1,7 @@
 from src.models import Persona
 
 class RegistroPersonas:
-    def __init__(self, registros: list[tuple[str, str, str, int]] = None):
+    def __init__(self, registros: list[tuple[str, str, str, int]]) -> None:
         self._personas_por_dni: dict[str, Persona]={}
         
         for dni, nombre, apellido, edad in registros:
