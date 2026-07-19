@@ -1,6 +1,6 @@
 from src.registro import RegistroPersonas
 
-def main():
+def main() -> None:
     datos = [
         ("12345678", "Juan", "Pérez", 19),
         ("87654321", "María", "Gómez", 35), 
@@ -10,17 +10,17 @@ def main():
     registro = RegistroPersonas(datos)
     print(registro.obtener_registros_formateados())
 
-    print("Persona mayor:", registro.obtener_persona_mayor())
-    print("Persona menor:", registro.obtener_persona_menor())
+    print("\n Persona mayor:", registro.obtener_persona_mayor())
+    print("\n Persona menor:", registro.obtener_persona_menor())
 
     mayores, menores = registro.segmentar_por_edad()
 
-    print("Mayores o iguales al umbral:", mayores)
-    print("Menores al umbral:", menores)
+    print("\nMayores o iguales al umbral:", mayores)
+    print("\n Menores al umbral:", menores)
 
-    print("Promedio de edad:", registro.calcular_promedio_edad())
+    print("\n Promedio de edad:", registro.calcular_promedio_edad())
 
-    print("Edad de la persona con DNI 87654321:", registro.obtener_edad_por_dni("87654321"))
+    print("\n Edad de la persona con DNI 87654321:", registro.obtener_edad_por_dni("87654321"))
 
 if __name__ == "__main__":
     main()
